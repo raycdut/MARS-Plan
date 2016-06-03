@@ -10,7 +10,8 @@
             history.pushState("", document.title, location.pathname);
         }
     }
-    // Data
+
+// Data
     self.Views = {
         Loading: {} // Other views are added dynamically by app.addViewModel(...).
     };
@@ -19,7 +20,7 @@
     // UI state
     self.view = ko.observable(self.Views.Loading);
 
-    self.loading = ko.computed(function () {
+    self.loading = ko.computed(function() {
         return self.view() === self.Views.Loading;
     });
 
@@ -28,7 +29,7 @@
     // Other navigateToX functions are added dynamically by app.addViewModel(...).
 
     // Other operations
-    self.addViewModel = function (options) {
+    self.addViewModel = function(options) {
         var viewItem = new options.factory(self, dataModel),
             navigator;
 
@@ -36,7 +37,7 @@
         self.Views[options.name] = viewItem;
 
         // Add binding member to AppViewModel (for example, app.home);
-        self[options.bindingMemberName] = ko.computed(function () {
+        self[options.bindingMemberName] = ko.computed(function() {
             if (!dataModel.getAccessToken()) {
                 // The following code looks for a fragment in the URL to get the access token which will be
                 // used to call the protected Web API resource
@@ -44,7 +45,7 @@
 
                 if (fragment.access_token) {
                     // returning with access token, restore old hash, or at least hide token
-                    window.location.hash = fragment.state || '';
+                    window.location.hash = fragment.state || "";
                     dataModel.setAccessToken(fragment.access_token);
                 } else {
                     // no token - so bounce to Authorize endpoint in AccountController to sign in or register
@@ -58,7 +59,7 @@
         if (typeof (options.navigatorFactory) !== "undefined") {
             navigator = options.navigatorFactory(self, dataModel);
         } else {
-            navigator = function () {
+            navigator = function() {
                 window.location.hash = options.bindingMemberName;
             };
         }
@@ -67,9 +68,9 @@
         self["navigateTo" + options.name] = navigator;
     };
 
-    self.initialize = function () {
+    self.initialize = function() {
         Sammy().run();
-    }
+    };
 }
 
 var app = new AppViewModel(new AppDataModel());

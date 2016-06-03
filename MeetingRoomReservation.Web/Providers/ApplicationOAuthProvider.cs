@@ -1,13 +1,37 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.Owin.Security.OAuth;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ApplicationOAuthProvider.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   The application o auth provider.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace MeetingRoomReservation.Web.Providers
 {
+    using System;
+    using System.Threading.Tasks;
+
+    using Microsoft.Owin.Security.OAuth;
+
+    /// <summary>
+    /// The application o auth provider.
+    /// </summary>
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {
+        /// <summary>
+        /// The _public client id.
+        /// </summary>
         private readonly string _publicClientId;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApplicationOAuthProvider"/> class.
+        /// </summary>
+        /// <param name="publicClientId">
+        /// The public client id.
+        /// </param>
+        /// <exception cref="ArgumentNullException">
+        /// </exception>
         public ApplicationOAuthProvider(string publicClientId)
         {
             if (publicClientId == null)
@@ -15,14 +39,23 @@ namespace MeetingRoomReservation.Web.Providers
                 throw new ArgumentNullException("publicClientId");
             }
 
-            _publicClientId = publicClientId;
+            this._publicClientId = publicClientId;
         }
 
+        /// <summary>
+        /// The validate client redirect uri.
+        /// </summary>
+        /// <param name="context">
+        /// The context.
+        /// </param>
+        /// <returns>
+        /// The <see cref="Task"/>.
+        /// </returns>
         public override Task ValidateClientRedirectUri(OAuthValidateClientRedirectUriContext context)
         {
-            if (context.ClientId == _publicClientId)
+            if (context.ClientId == this._publicClientId)
             {
-                Uri expectedRootUri = new Uri(context.Request.Uri, "/");
+                var expectedRootUri = new Uri(context.Request.Uri, "/");
 
                 if (expectedRootUri.AbsoluteUri == context.RedirectUri)
                 {
