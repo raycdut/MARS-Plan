@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetingRoomReservation.Web.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetingRoomReservation.Web.Api", "MeetingRoomReservation.Web.Api\MeetingRoomReservation.Web.Api.csproj", "{60100D75-69B7-47D1-BE02-23DCAA94CCAB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetingRoomReservation.Data.SqlServer.IntergationTests", "MeetingRoomReservation.Data.SqlServer.IntergationTests\MeetingRoomReservation.Data.SqlServer.IntergationTests.csproj", "{CFD4E807-DD5D-4121-88F8-7A632CA6322B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,11 +61,16 @@ Global
 		{60100D75-69B7-47D1-BE02-23DCAA94CCAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60100D75-69B7-47D1-BE02-23DCAA94CCAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60100D75-69B7-47D1-BE02-23DCAA94CCAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFD4E807-DD5D-4121-88F8-7A632CA6322B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFD4E807-DD5D-4121-88F8-7A632CA6322B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFD4E807-DD5D-4121-88F8-7A632CA6322B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFD4E807-DD5D-4121-88F8-7A632CA6322B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{DA00B253-8A49-4579-A56E-84F9991032D1} = {2180A562-3AC2-4F1B-A25C-70447A53FB63}
+		{CFD4E807-DD5D-4121-88F8-7A632CA6322B} = {2180A562-3AC2-4F1B-A25C-70447A53FB63}
 	EndGlobalSection
 EndGlobal
