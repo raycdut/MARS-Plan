@@ -14,7 +14,7 @@ namespace MeetingRoomReservation.Web.Controllers
     /// <summary>
     /// The home controller.
     /// </summary>
-    [Authorize]
+    ////[Authorize]
     public class HomeController : Controller
     {
         /// <summary>

@@ -7,6 +7,20 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetingRoomReservation.Web"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetingRoomReservation.Web.Tests", "MeetingRoomReservation.Web.Tests\MeetingRoomReservation.Web.Tests.csproj", "{DA00B253-8A49-4579-A56E-84F9991032D1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.0 MeetingRoomTestsSuite", "1.0 MeetingRoomTestsSuite", "{2180A562-3AC2-4F1B-A25C-70447A53FB63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetingRoomReservation.Common", "MeetingRoomReservation.Common\MeetingRoomReservation.Common.csproj", "{D6C979E6-D2B8-4476-89CA-5A635D94C800}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetingRoomReservation.Data", "MeetingRoomReservation.Data\MeetingRoomReservation.Data.csproj", "{F97B1B0D-7017-40D3-95E9-24E86B5D9BA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetingRoomReservation.Data.SqlServer", "MeetingRoomReservation.Data.SqlServer\MeetingRoomReservation.Data.SqlServer.csproj", "{32BDEA9F-0390-49A3-810E-C349CE658419}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetingRoomReservation.Web.Api.Models", "MeetingRoomReservation.Web.Api.Models\MeetingRoomReservation.Web.Api.Models.csproj", "{7F86DE13-5564-45E7-95B0-A22F9D5977BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetingRoomReservation.Web.Common", "MeetingRoomReservation.Web.Common\MeetingRoomReservation.Web.Common.csproj", "{EB3E280F-C7A6-40F0-9BAD-C5E9851C1589}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetingRoomReservation.Web.Api", "MeetingRoomReservation.Web.Api\MeetingRoomReservation.Web.Api.csproj", "{60100D75-69B7-47D1-BE02-23DCAA94CCAB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,8 +35,35 @@ Global
 		{DA00B253-8A49-4579-A56E-84F9991032D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA00B253-8A49-4579-A56E-84F9991032D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA00B253-8A49-4579-A56E-84F9991032D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6C979E6-D2B8-4476-89CA-5A635D94C800}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6C979E6-D2B8-4476-89CA-5A635D94C800}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6C979E6-D2B8-4476-89CA-5A635D94C800}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6C979E6-D2B8-4476-89CA-5A635D94C800}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F97B1B0D-7017-40D3-95E9-24E86B5D9BA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F97B1B0D-7017-40D3-95E9-24E86B5D9BA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F97B1B0D-7017-40D3-95E9-24E86B5D9BA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F97B1B0D-7017-40D3-95E9-24E86B5D9BA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32BDEA9F-0390-49A3-810E-C349CE658419}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32BDEA9F-0390-49A3-810E-C349CE658419}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32BDEA9F-0390-49A3-810E-C349CE658419}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32BDEA9F-0390-49A3-810E-C349CE658419}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F86DE13-5564-45E7-95B0-A22F9D5977BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F86DE13-5564-45E7-95B0-A22F9D5977BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F86DE13-5564-45E7-95B0-A22F9D5977BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F86DE13-5564-45E7-95B0-A22F9D5977BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB3E280F-C7A6-40F0-9BAD-C5E9851C1589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB3E280F-C7A6-40F0-9BAD-C5E9851C1589}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB3E280F-C7A6-40F0-9BAD-C5E9851C1589}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB3E280F-C7A6-40F0-9BAD-C5E9851C1589}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60100D75-69B7-47D1-BE02-23DCAA94CCAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60100D75-69B7-47D1-BE02-23DCAA94CCAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60100D75-69B7-47D1-BE02-23DCAA94CCAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60100D75-69B7-47D1-BE02-23DCAA94CCAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DA00B253-8A49-4579-A56E-84F9991032D1} = {2180A562-3AC2-4F1B-A25C-70447A53FB63}
 	EndGlobalSection
 EndGlobal

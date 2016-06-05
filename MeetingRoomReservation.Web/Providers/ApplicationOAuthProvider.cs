@@ -53,19 +53,20 @@ namespace MeetingRoomReservation.Web.Providers
         /// </returns>
         public override Task ValidateClientRedirectUri(OAuthValidateClientRedirectUriContext context)
         {
-            if (context.ClientId == this._publicClientId)
+            if (context.ClientId != this._publicClientId)
             {
-                var expectedRootUri = new Uri(context.Request.Uri, "/");
+                return Task.FromResult<object>(null);
+            }
+            var expectedRootUri = new Uri(context.Request.Uri, "/");
 
-                if (expectedRootUri.AbsoluteUri == context.RedirectUri)
-                {
-                    context.Validated();
-                }
-                else if (context.ClientId == "web")
-                {
-                    var expectedUri = new Uri(context.Request.Uri, "/");
-                    context.Validated(expectedUri.AbsoluteUri);
-                }
+            if (expectedRootUri.AbsoluteUri == context.RedirectUri)
+            {
+                context.Validated();
+            }
+            else if (context.ClientId == "web")
+            {
+                var expectedUri = new Uri(context.Request.Uri, "/");
+                context.Validated(expectedUri.AbsoluteUri);
             }
 
             return Task.FromResult<object>(null);
