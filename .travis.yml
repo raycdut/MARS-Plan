@@ -1,8 +1,5 @@
 language: csharp
-solution: slnMeetingRoomReservation.sln
-before_install:
-  - sudo apt-get install nunit-console
-before_script:
+solution: source/slnMeetingRoomReservation.sln
+install:
+  - sudo apt-get install -y gtk-sharp2
   - nuget restore source/slnMeetingRoomReservation.sln
-after_script:
-  #- nunit-console Tests/bin/Release/Tests.dll
