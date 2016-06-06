@@ -11,6 +11,8 @@ namespace MeetingRoomReservation.Data.SqlServer
 {
     using System.Data.Entity;
 
+    using MeetingRoomReservation.Data.SqlServer.Migrations;
+
     /// <summary>
     ///     The reservation context.
     /// </summary>
@@ -22,7 +24,8 @@ namespace MeetingRoomReservation.Data.SqlServer
         public ReservationContext()
             : base("DefaultConnection")
         {
-            
+            Database.SetInitializer(
+                new MigrateDatabaseToLatestVersion<ReservationContext, Configuration>("DefaultConnection"));
         }
 
         /// <summary>

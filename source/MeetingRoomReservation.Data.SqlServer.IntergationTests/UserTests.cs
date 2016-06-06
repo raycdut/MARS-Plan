@@ -34,7 +34,7 @@
         {
             using (var db = new ReservationContext())
             {
-                var user = new User { UserId = Guid.NewGuid(), UserName = "aaa" };
+                var user = new User { UserId = Guid.NewGuid(), UserName = "aaa", CreatedDate = DateTime.Now };
                 db.Users.Add(user);
                 db.SaveChanges();
                 Assert.IsTrue(db.Users.FirstOrDefault(i => i.UserId == user.UserId) != null);
