@@ -1,4 +1,4 @@
 language: csharp
 solution: slnMeetingRoomReservation.sln
 install:
-  - nuget slnMeetingRoomReservation.sln
+  - nuget ./slnMeetingRoomReservation.sln
