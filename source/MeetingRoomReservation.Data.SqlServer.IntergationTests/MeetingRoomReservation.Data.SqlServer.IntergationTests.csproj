@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="RoomsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MeetingRoomReservation.Data.SqlServer\MeetingRoomReservation.Data.SqlServer.csproj">

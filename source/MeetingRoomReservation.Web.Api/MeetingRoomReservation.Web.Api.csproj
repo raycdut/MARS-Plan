@@ -123,6 +123,20 @@
     <Folder Include="Controllers\V1\" />
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MeetingRoomReservation.Data.SqlServer\MeetingRoomReservation.Data.SqlServer.csproj">
+      <Project>{32bdea9f-0390-49a3-810e-c349ce658419}</Project>
+      <Name>MeetingRoomReservation.Data.SqlServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MeetingRoomReservation.Data\MeetingRoomReservation.Data.csproj">
+      <Project>{f97b1b0d-7017-40d3-95e9-24e86b5d9ba0}</Project>
+      <Name>MeetingRoomReservation.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MeetingRoomReservation.Web.Api.Models\MeetingRoomReservation.Web.Api.Models.csproj">
+      <Project>{7f86de13-5564-45e7-95b0-a22f9d5977be}</Project>
+      <Name>MeetingRoomReservation.Web.Api.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
