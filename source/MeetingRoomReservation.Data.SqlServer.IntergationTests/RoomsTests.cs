@@ -8,37 +8,39 @@
 // --------------------------------------------------------------------------------------------------------------------
 namespace MeetingRoomReservation.Data.SqlServer.IntergationTests
 {
-	
-	//TODO change to nunit
     using System;
     using System.Linq;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     ///     The rooms tests.
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class RoomsTests
     {
         /// <summary>
-        ///     The test rooms.
+        ///     The clear data.
         /// </summary>
-        [TestMethod]
-        public void TestRooms()
+        [TearDown]
+        public void ClearData()
         {
             using (var db = new ReservationContext())
             {
-                Assert.IsNotNull(db);
+                foreach (var item in db.Rooms)
+                {
+                    db.Rooms.Remove(item);
+                }
 
-                Assert.IsTrue(db.Rooms.Count() >= 0);
+                db.SaveChanges();
+                Assert.IsTrue(db.Rooms.FirstOrDefault() == null);
             }
         }
 
         /// <summary>
         ///     The test add room.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestAddRoom()
         {
             using (var db = new ReservationContext())
@@ -60,20 +62,16 @@ namespace MeetingRoomReservation.Data.SqlServer.IntergationTests
         }
 
         /// <summary>
-        ///     The clear data.
+        ///     The test rooms.
         /// </summary>
-        [TestCleanup]
-        public void ClearData()
+        [Test]
+        public void TestRooms()
         {
             using (var db = new ReservationContext())
             {
-                foreach (var item in db.Rooms)
-                {
-                    db.Rooms.Remove(item);
-                }
+                Assert.IsNotNull(db);
 
-                db.SaveChanges();
-                Assert.IsTrue(db.Rooms.FirstOrDefault() == null);
+                Assert.IsTrue(db.Rooms.Count() >= 0);
             }
         }
     }
