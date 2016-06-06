@@ -56,5 +56,23 @@ namespace MeetingRoomReservation.Data.SqlServer.IntergationTests
                 Assert.IsTrue(db.Rooms.FirstOrDefault(i => i.RoomId == room.RoomId) != null);
             }
         }
+
+        /// <summary>
+        ///     The clear data.
+        /// </summary>
+        [TestCleanup]
+        public void ClearData()
+        {
+            using (var db = new ReservationContext())
+            {
+                foreach (var item in db.Rooms)
+                {
+                    db.Rooms.Remove(item);
+                }
+
+                db.SaveChanges();
+                Assert.IsTrue(db.Rooms.FirstOrDefault() == null);
+            }
+        }
     }
 }
