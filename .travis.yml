@@ -1,6 +1,11 @@
 language: csharp
+solution: ./source/slnMeetingRoomReservation.sln
 mono:
 - latest
-solution: source/slnMeetingRoomReservation.sln
+script: make build
 install:
-- nuget restore source/slnMeetingRoomReservation.sln
+- sudo apt-get install nunit-console
+#- nuget restore ./source/slnMeetingRoomReservation.sln
+script:
+  - xbuild ./source/slnMeetingRoomReservation.sln
+  #- nunit-console ./src/MeetingRoomReservation.Data.SqlServer.IntergationTests/bin/Debug/MeetingRoomReservation.Data.SqlServer.IntergationTests.dll
