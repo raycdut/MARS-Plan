@@ -169,6 +169,10 @@
       <Project>{7f86de13-5564-45e7-95b0-a22f9d5977be}</Project>
       <Name>MeetingRoomReservation.Web.Api.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MeetingRoomReservation.Web.Common\MeetingRoomReservation.Web.Common.csproj">
+      <Project>{eb3e280f-c7a6-40f0-9bad-c5e9851c1589}</Project>
+      <Name>MeetingRoomReservation.Web.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

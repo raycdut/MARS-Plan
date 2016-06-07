@@ -1,12 +1,13 @@
 ﻿namespace MeetingRoomReservation.Web.Api.Controllers.V2
 {
-    using System.Collections.Generic;
+    using System.Net;
+    using System.Net.Http;
+    using System.Net.Http.Formatting;
     using System.Web.Http;
 
-    using MeetingRoomReservation.Data;
     using MeetingRoomReservation.Data.SqlServer.IRepository;
-
-    public class RoomsController : ApiController
+    using Common;
+    public class RoomsController : ApiControllerWrapper
     {
         public RoomsController(IRoomRepository repository)
         {
@@ -16,11 +17,13 @@
         private IRoomRepository RoomRepository { get; }
 
         // GET: api/Rooms
-        public IEnumerable<Room> Get()
+        public HttpResponseMessage Get()
         {
-            return this.RoomRepository.Get();
+            return this.Request.CreateResponse(HttpStatusCode.OK, this.RoomRepository.Get(), new JsonMediaTypeFormatter());
+
         }
 
+        
         // GET: api/Rooms/5
         public string Get(int id)
         {
