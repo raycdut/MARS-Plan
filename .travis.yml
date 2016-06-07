@@ -4,7 +4,7 @@ mono:
 - latest
 install:
 - sudo apt-get install nunit-console
-- nuget restore ./source/slnMeetingRoomReservation.sln
+#- nuget restore ./source/slnMeetingRoomReservation.sln
 script:
   - xbuild ./source/slnMeetingRoomReservation.sln
-  - nunit-console ./src/MeetingRoomReservation.Data.SqlServer.IntergationTests/bin/Debug/MeetingRoomReservation.Data.SqlServer.IntergationTests.dll
+  #- nunit-console ./src/MeetingRoomReservation.Data.SqlServer.IntergationTests/bin/Debug/MeetingRoomReservation.Data.SqlServer.IntergationTests.dll
