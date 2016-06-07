@@ -2,8 +2,10 @@ language: csharp
 solution: ./source/slnMeetingRoomReservation.sln
 mono:
 - latest
+script: make build
 install:
 - sudo apt-get install nunit-console
+- make install
 #- nuget restore ./source/slnMeetingRoomReservation.sln
 script:
   - xbuild ./source/slnMeetingRoomReservation.sln
