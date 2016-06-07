@@ -19,6 +19,12 @@ namespace MeetingRoomReservation.Web.Api
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            config.Routes.MapHttpRoute(
+                name: "DefaultApi2",
+                routeTemplate: "api/{version}/{controller}/{action}/{id}",
+                defaults: new { id = RouteParameter.Optional }
+            );
         }
     }
 }

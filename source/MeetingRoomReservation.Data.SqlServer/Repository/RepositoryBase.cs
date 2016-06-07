@@ -16,6 +16,11 @@
             this.Db = new ReservationContext();
         }
 
+        public RepositoryBase(ReservationContext dbCtx)
+        {
+            this.Db = dbCtx;
+        }
+
         public ReservationContext Db { get; set; }
 
         public void Delete(T obj)
